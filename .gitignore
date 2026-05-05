@@ -1,0 +1,36 @@
+.git/
+.claude/
+
+# Local scratch and temporary outputs
+_tmp/
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python/cache artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local one-off test artifact
+__patch_test.txt
+
+# Local analysis artifacts
+keystream.bin
+keystream_positions.pkl
+
+# Local AI handoff / notes
+AI_UPDATE_GUIDE.md
+CLAUDE_GUIDE.md
+
+# Local analysis / repo-specific notes and helper scripts
+blog.md
+tools/compare_missing_skins.ps1
