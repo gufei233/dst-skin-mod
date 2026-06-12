@@ -25792,4 +25792,903 @@ table.insert(prefs, CreatePrefabSkin("custom_researchlab4_hutch_costumep",{
     type = "item",
 }))
 
+
+table.insert(prefs, CreatePrefabSkin("custom_axe_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_axe_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_axe_rose.dyn"),
+    },
+	base_prefab = "axe",
+    build_name_override = "custom_axe_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) axe_init_fn(inst, "custom_axe_rose") end,
+	skin_tags = { "AXE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_beehat_ninja",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_beehat_ninja.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_beehat_ninja.dyn"),
+    },
+	base_prefab = "beehat",
+    build_name_override = "custom_beehat_ninja" ,
+	type = "item",
+	rarity = "Loyal",
+	init_fn = function(inst) beehat_init_fn(inst, "custom_beehat_ninja") end,
+	skin_tags = { "BEEHAT", "CRAFTABLE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_chair_stool_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_chair_stool_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_chair_stool_rose.dyn"),
+    },
+	base_prefab = "wood_stool",
+    build_name_override = "custom_chair_stool_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) wood_stool_init_fn(inst, "custom_chair_stool_rose") end,
+	skin_tags = { "WOOD_STOOL", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_decor_centerpiece_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_decor_centerpiece_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_decor_centerpiece_rose.dyn"),
+    },
+	base_prefab = "decor_centerpiece",
+    build_name_override = "custom_decor_centerpiece_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) decor_centerpiece_init_fn(inst, "custom_decor_centerpiece_rose") end,
+	skin_tags = { "DECOR_CENTERPIECE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_decor_flowervase_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_decor_flowervase_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_decor_flowervase_rose.dyn"),
+    },
+	base_prefab = "decor_flowervase",
+    build_name_override = "custom_decor_flowervase_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) decor_flowervase_init_fn(inst, "custom_decor_flowervase_rose") end,
+	skin_tags = { "DECOR_FLOWERVASE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_decor_lamp_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_decor_lamp_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_decor_lamp_rose.dyn"),
+    },
+	base_prefab = "decor_lamp",
+    build_name_override = "custom_decor_lamp_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) decor_lamp_init_fn(inst, "custom_decor_lamp_rose") end,
+	skin_tags = { "DECOR_LAMP", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_decor_phonograph_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_decor_phonograph_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_decor_phonograph_rose.dyn"),
+    },
+	base_prefab = "phonograph",
+    build_name_override = "custom_decor_phonograph_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) phonograph_init_fn(inst, "custom_decor_phonograph_rose") end,
+	skin_tags = { "PHONOGRAPH", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_decor_pictureframe_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_decor_pictureframe_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_decor_pictureframe_rose.dyn"),
+    },
+	base_prefab = "decor_pictureframe",
+    build_name_override = "custom_decor_pictureframe_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) decor_pictureframe_init_fn(inst, "custom_decor_pictureframe_rose") end,
+	skin_tags = { "DECOR_PICTUREFRAME", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_decor_portraitframe_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_decor_portraitframe_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_decor_portraitframe_rose.dyn"),
+    },
+	base_prefab = "decor_portraitframe",
+    build_name_override = "custom_decor_portraitframe_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) decor_portraitframe_init_fn(inst, "custom_decor_portraitframe_rose") end,
+	skin_tags = { "DECOR_PORTRAITFRAME", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_eets_e_basic",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_eets_e_basic.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_eets_e_basic.dyn"),
+    },
+	base_prefab = "critter_eets",
+    build_name_override = "custom_eets_e_basic" ,
+	type = "item",
+	rarity = "Loyal",
+	init_fn = function(inst) critter_eets_init_fn(inst, "custom_eets_e_basic") end,
+	skin_tags = { "EETS", "CRAFTABLE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_eets_e_basic_builder",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_eets_e_basic.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_eets_e_basic.dyn"),
+    },
+	base_prefab = "critter_eets_builder",
+	type = "item",
+	build_name_override = "custom_eets_e_basic",
+	rarity = "Loyal",
+	init_fn = function(inst) critter_builder_init_fn(inst, "custom_eets_e_basic" ) end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_fence_gate_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_fence_gate_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_fence_gate_rose.dyn"),
+    },
+	base_prefab = "fence_gate",
+    build_name_override = "custom_fence_gate_rose" ,
+	type = "item",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) fence_gate_init_fn(inst, "custom_fence_gate_rose") end,
+	skin_tags = { "FENCE_GATE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_fence_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_fence_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_fence_rose.dyn"),
+    },
+	base_prefab = "fence",
+    build_name_override = "custom_fence_rose" ,
+	type = "item",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) fence_init_fn(inst, "custom_fence_rose") end,
+	skin_tags = { "FENCE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_fence_rose_item",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_fence_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_fence_rose.dyn"),
+    },
+	base_prefab = "fence_item",
+	type = "item",
+	build_name_override = "custom_fence_rose",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) fence_item_init_fn(inst, "custom_fence_rose") end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_fencegate_rose_item",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_fence_gate_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_fence_gate_rose.dyn"),
+    },
+	base_prefab = "fence_gate_item",
+	type = "item",
+	build_name_override = "custom_fence_gate_rose",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) fence_gate_item_init_fn(inst, "custom_fence_gate_rose") end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_panflute_insect",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_panflute_insect.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_panflute_insect.dyn"),
+    },
+	base_prefab = "panflute",
+    build_name_override = "custom_panflute_insect" ,
+	type = "item",
+	rarity = "Loyal",
+	init_fn = function(inst) panflute_init_fn(inst, "custom_panflute_insect") end,
+	skin_tags = { "PANFLUTE", "CRAFTABLE", "INSECT", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_pitchfork_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_pitchfork_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_pitchfork_rose.dyn"),
+    },
+	base_prefab = "pitchfork",
+    build_name_override = "custom_pitchfork_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) pitchfork_init_fn(inst, "custom_pitchfork_rose") end,
+	skin_tags = { "PITCHFORK", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_round_table_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_round_table_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_round_table_rose.dyn"),
+    },
+	base_prefab = "wood_table_round",
+    build_name_override = "custom_round_table_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) wood_table_round_init_fn(inst, "custom_round_table_rose") end,
+	skin_tags = { "WOOD_TABLE_ROUND", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_shovel_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_shovel_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_shovel_rose.dyn"),
+    },
+	base_prefab = "shovel",
+    build_name_override = "custom_shovel_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) shovel_init_fn(inst, "custom_shovel_rose") end,
+	skin_tags = { "SHOVEL", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_stone_chair_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_stone_chair_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_stone_chair_rose.dyn"),
+    },
+	base_prefab = "stone_chair",
+    build_name_override = "custom_stone_chair_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) stone_chair_init_fn(inst, "custom_stone_chair_rose") end,
+	skin_tags = { "STONE_CHAIR", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_stonetable_square_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_stonetable_square_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_stonetable_square_rose.dyn"),
+    },
+	base_prefab = "stone_table_square",
+    build_name_override = "custom_stonetable_square_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) stone_table_square_init_fn(inst, "custom_stonetable_square_rose") end,
+	skin_tags = { "STONE_TABLE_SQUARE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_succulent_potted_kleimug",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_succulent_potted_kleimug.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_succulent_potted_kleimug.dyn"),
+    },
+	base_prefab = "succulent_potted",
+    build_name_override = "custom_succulent_potted_kleimug" ,
+	type = "item",
+	rarity = "Loyal",
+	init_fn = function(inst) succulent_potted_init_fn(inst, "custom_succulent_potted_kleimug") end,
+	skin_tags = { "SUCCULENT_POTTED", "CRAFTABLE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wall_stone_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wall_stone_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wall_stone_rose.dyn"),
+    },
+	base_prefab = "wall_stone",
+    build_name_override = "custom_wall_stone_rose" ,
+	type = "item",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) wall_stone_init_fn(inst, "custom_wall_stone_rose") end,
+	skin_tags = { "WALL_STONE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wall_stone_roseitem",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wall_stone_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wall_stone_rose.dyn"),
+    },
+	base_prefab = "wall_stone_item",
+	type = "item",
+	build_name_override = "custom_wall_stone_rose",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) wall_stone_item_init_fn(inst, "custom_wall_stone_rose") end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_walter_20s",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_walter_20s.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_walter_20s.dyn"),
+    },
+	base_prefab = "walter",
+    build_name_override = "custom_walter_20s" ,
+	type = "base",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	skin_tags = { "TWENTIES", "BASE", "WALTER", },
+	bigportrait_anim = { build = "bigportraits/walter_20s.xml", symbol = "walter_20s_oval.tex"},
+	skins = { ghost_skin = "ghost_walter", normal_skin = "custom_walter_20s", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_walter_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_walter_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_walter_hazard.dyn"),
+    },
+	base_prefab = "walter",
+    build_name_override = "custom_walter_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_walter", normal_skin = "custom_walter_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_walterhat_20s",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_walterhat_20s.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_walterhat_20s.dyn"),
+    },
+	base_prefab = "walterhat",
+    build_name_override = "custom_walterhat_20s" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) walterhat_init_fn(inst, "custom_walterhat_20s") end,
+	skin_tags = { "TWENTIES", "WALTERHAT", "CRAFTABLE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wanda_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wanda_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wanda_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_ghost_wanda_build.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_ghost_wanda_build.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wanda_hazard_old.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wanda_hazard_old.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wanda_hazard_young.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wanda_hazard_young.dyn"),
+    },
+	base_prefab = "wanda",
+    build_name_override = "custom_wanda_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "custom_ghost_wanda_build", normal_skin = "custom_wanda_hazard", old_skin = "custom_wanda_hazard_old", young_skin = "custom_wanda_hazard_young", },
+	has_alternate_for_skirt = { "custom_wanda_hazard_old", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_warly_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_warly_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_warly_hazard.dyn"),
+    },
+	base_prefab = "warly",
+    build_name_override = "custom_warly_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_warly_build", normal_skin = "custom_warly_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wathgrithr_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wathgrithr_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wathgrithr_hazard.dyn"),
+    },
+	base_prefab = "wathgrithr",
+    build_name_override = "custom_wathgrithr_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wathgrithr_build", normal_skin = "custom_wathgrithr_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_waxwell_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_waxwell_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_waxwell_hazard.dyn"),
+    },
+	base_prefab = "waxwell",
+    build_name_override = "custom_waxwell_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_waxwell_build", normal_skin = "custom_waxwell_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_waxwell_western",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_waxwell_western.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_waxwell_western.dyn"),
+    },
+	base_prefab = "waxwell",
+    build_name_override = "custom_waxwell_western" ,
+	type = "base",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	skin_tags = { "WESTERN", "BASE", "WAXWELL", },
+	bigportrait_anim = { build = "bigportraits/waxwell_western.xml", symbol = "waxwell_western_oval.tex"},
+	skins = { ghost_skin = "ghost_waxwell_build", normal_skin = "custom_waxwell_western", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_webber_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_webber_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_webber_hazard.dyn"),
+    },
+	base_prefab = "webber",
+    build_name_override = "custom_webber_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_webber_build", normal_skin = "custom_webber_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wendy_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wendy_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wendy_hazard.dyn"),
+    },
+	base_prefab = "wendy",
+    build_name_override = "custom_wendy_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wendy_build", normal_skin = "custom_wendy_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wes_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wes_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wes_hazard.dyn"),
+    },
+	base_prefab = "wes",
+    build_name_override = "custom_wes_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wes_build", normal_skin = "custom_wes_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wickerbottom_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wickerbottom_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wickerbottom_hazard.dyn"),
+    },
+	base_prefab = "wickerbottom",
+    build_name_override = "custom_wickerbottom_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wickerbottom_build", normal_skin = "custom_wickerbottom_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_willow_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_willow_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_willow_hazard.dyn"),
+    },
+	base_prefab = "willow",
+    build_name_override = "custom_willow_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_willow_build", normal_skin = "custom_willow_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wilson_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wilson_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wilson_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_walter_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_walter_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wanda_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wanda_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_warly_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_warly_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wathgrithr_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wathgrithr_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_waxwell_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_waxwell_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_webber_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_webber_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wendy_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wendy_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wes_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wes_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wickerbottom_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wickerbottom_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_willow_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_willow_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_winona_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_winona_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wolfgang_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wolfgang_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_woodie_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_woodie_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wormwood_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wormwood_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wortox_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wortox_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wurt_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wurt_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wx78_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wx78_hazard.dyn"),
+    },
+	base_prefab = "wilson",
+    build_name_override = "custom_wilson_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { "BASE", "WILSON", },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	skins = { ghost_skin = "ghost_wilson_build", normal_skin = "custom_wilson_hazard", },
+	release_group = groupid,
+	granted_items = { "custom_walter_hazard", "custom_wanda_hazard", "custom_warly_hazard", "custom_wathgrithr_hazard", "custom_waxwell_hazard", "custom_webber_hazard", "custom_wendy_hazard", "custom_wes_hazard", "custom_wickerbottom_hazard", "custom_willow_hazard", "custom_winona_hazard", "custom_wolfgang_hazard", "custom_woodie_hazard", "custom_wormwood_hazard", "custom_wortox_hazard", "custom_wurt_hazard", "custom_wx78_hazard", },
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_winona_20s",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_winona_20s.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_winona_20s.dyn"),
+    },
+	base_prefab = "winona",
+    build_name_override = "custom_winona_20s" ,
+	type = "base",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	skin_tags = { "TWENTIES", "BASE", "WINONA", },
+	bigportrait_anim = { build = "bigportraits/winona_20s.xml", symbol = "winona_20s_oval.tex"},
+	skins = { ghost_skin = "ghost_winona_build", normal_skin = "custom_winona_20s", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_winona_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_winona_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_winona_hazard.dyn"),
+    },
+	base_prefab = "winona",
+    build_name_override = "custom_winona_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_winona_build", normal_skin = "custom_winona_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wolfgang_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wolfgang_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wolfgang_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wolfgang_mighty_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wolfgang_mighty_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wolfgang_skinny_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wolfgang_skinny_hazard.dyn"),
+    },
+	base_prefab = "wolfgang",
+    build_name_override = "custom_wolfgang_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wolfgang_build", mighty_skin = "custom_wolfgang_mighty_hazard", normal_skin = "custom_wolfgang_hazard", wimpy_skin = "custom_wolfgang_skinny_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wolfgang_western",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wolfgang_western.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wolfgang_western.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wolfgang_mighty_western.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wolfgang_mighty_western.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wolfgang_skinny_western.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wolfgang_skinny_western.dyn"),
+    },
+	base_prefab = "wolfgang",
+    build_name_override = "custom_wolfgang_western" ,
+	type = "base",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	skin_tags = { "WESTERN", "BASE", "WOLFGANG", },
+	bigportrait_anim = { build = "bigportraits/wolfgang_western.xml", symbol = "wolfgang_western_oval.tex"},
+	skins = { ghost_skin = "ghost_wolfgang_build", mighty_skin = "custom_wolfgang_mighty_western", normal_skin = "custom_wolfgang_western", wimpy_skin = "custom_wolfgang_skinny_western", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wood_chair_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wood_chair_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wood_chair_rose.dyn"),
+    },
+	base_prefab = "wood_chair",
+    build_name_override = "custom_wood_chair_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) wood_chair_init_fn(inst, "custom_wood_chair_rose") end,
+	skin_tags = { "WOOD_CHAIR", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wood_table_rose",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wood_table_rose.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wood_table_rose.dyn"),
+    },
+	base_prefab = "wood_table_square",
+    build_name_override = "custom_wood_table_rose" ,
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) wood_table_square_init_fn(inst, "custom_wood_table_rose") end,
+	skin_tags = { "WOOD_TABLE_SQUARE", "CRAFTABLE", "ROSE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_woodie_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_woodie_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_woodie_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_ghost_werebeaver_build.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_ghost_werebeaver_build.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_ghost_weregoose_build.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_ghost_weregoose_build.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_ghost_weremoose_build.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_ghost_weremoose_build.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_werebeaver_build.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_werebeaver_build.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_weregoose_build.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_weregoose_build.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_weremoose_build.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_weremoose_build.dyn"),
+    },
+	base_prefab = "woodie",
+    build_name_override = "custom_woodie_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_woodie_build", ghost_werebeaver_skin = "custom_ghost_werebeaver_build", ghost_weregoose_skin = "custom_ghost_weregoose_build", ghost_weremoose_skin = "custom_ghost_weremoose_build", normal_skin = "custom_woodie_hazard", werebeaver_skin = "custom_werebeaver_build", weregoose_skin = "custom_weregoose_build", weremoose_skin = "custom_weremoose_build", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wormwood_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wormwood_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wormwood_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wormwood_hazard_stage2.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wormwood_hazard_stage2.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wormwood_hazard_stage3.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wormwood_hazard_stage3.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wormwood_hazard_stage4.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wormwood_hazard_stage4.dyn"),
+    },
+	base_prefab = "wormwood",
+    build_name_override = "custom_wormwood_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wormwood_build", normal_skin = "custom_wormwood_hazard", stage_2 = "custom_wormwood_hazard_stage2", stage_3 = "custom_wormwood_hazard_stage3", stage_4 = "custom_wormwood_hazard_stage4", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wortox_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wortox_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wortox_hazard.dyn"),
+    },
+	base_prefab = "wortox",
+    build_name_override = "custom_wortox_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wortox_build", normal_skin = "custom_wortox_hazard", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wurt_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wurt_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wurt_hazard.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wurt_hazard_powerup.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wurt_hazard_powerup.dyn"),
+    },
+	base_prefab = "wurt",
+    build_name_override = "custom_wurt_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wurt", normal_skin = "custom_wurt_hazard", powerup = "custom_wurt_hazard_powerup", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wurt_western",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wurt_western.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wurt_western.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_ghost_wurt_western.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_ghost_wurt_western.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wurt_western_powerup.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wurt_western_powerup.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wurt_lunar.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wurt_lunar.dyn"),
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wurt_lunar_powerup.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wurt_lunar_powerup.dyn"),
+    },
+	base_prefab = "wurt",
+    build_name_override = "custom_wurt_western" ,
+	type = "base",
+	rarity = "Elegant",
+	rarity_modifier = "Woven",
+	skin_tags = { "WESTERN", "BASE", "WURT", },
+	bigportrait_anim = { build = "bigportraits/wurt_western.xml", symbol = "wurt_western_oval.tex"},
+	skins = { ghost_skin = "custom_ghost_wurt_western", normal_skin = "custom_wurt_western", powerup = "custom_wurt_western_powerup", },
+	torso_tuck_builds = { "custom_wurt_lunar", "custom_wurt_lunar_powerup", },
+	has_alternate_for_body = { "custom_wurt_western", },
+	feet_cuff_size = { wurt_western_powerup = -1, wurt_western = -1, },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_wx78_hazard",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wx78_hazard.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wx78_hazard.dyn"),
+    },
+	base_prefab = "wx78",
+    build_name_override = "custom_wx78_hazard" ,
+	type = "base",
+	rarity = "Loyal",
+	skin_tags = { },
+	bigportrait_anim = { build = "bigportraits/wilson_hazard.xml", symbol = "wilson_hazard_oval.tex"},
+	share_bigportrait_name = "wilson_hazard",
+	skins = { ghost_skin = "ghost_wx78_build", normal_skin = "custom_wx78_hazard", },
+	release_group = groupid,
+}))
+
 return unpack(prefs)

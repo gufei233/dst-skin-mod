@@ -2454,6 +2454,10 @@ function critter_bulbin_builder_clear_fn(inst)
     inst.linked_skinname = nil
 end
 
+function critter_eets_init_fn(inst, build_name)
+    basic_init_fn(inst, build_name, "eets_basic")
+end
+
 
 --------------------------------------------------------------------------
 --[[ Mini Sign skin functions ]]
