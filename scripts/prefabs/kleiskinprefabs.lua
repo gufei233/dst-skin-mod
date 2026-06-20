@@ -1775,6 +1775,129 @@ table.insert(prefs, CreatePrefabSkin("custom_backpack_koalefant",{
     type = "item",
 }))
 
+local function custom_backpack_labrat_setfxcolour(inst, fx, colour)
+	if colour == 3 then
+		fx.AnimState:SetHue(0.2)
+		fx.AnimState:SetSaturation(1)
+	elseif colour == 2 then
+		fx.AnimState:SetHue(0.5)
+		fx.AnimState:SetSaturation(3.5)
+	else
+		fx.AnimState:SetHue(0)
+		fx.AnimState:SetSaturation(1)
+	end
+end
+
+local function custom_backpack_labrat_setcolour(inst, colour)
+	inst._backpack_labrat_colour = colour
+	if inst.components.inventoryitem then
+		inst.components.inventoryitem:ChangeImageName("custom_backpack_labrat")
+	end
+end
+
+local custom_backpack_labrat_fns =
+{
+	followfx_postinit = function(inst, fx)
+		fx.AnimState:SetLightOverride(0.5)
+		fx.components.bloomer:PushBloom("custom_backpack_labrat", "shaders/anim.ksh")
+		if inst._backpack_labrat_colour ~= 1 then
+			custom_backpack_labrat_setfxcolour(inst, fx, inst._backpack_labrat_colour)
+		end
+	end,
+	initialize = function(inst)
+		inst._backpack_labrat_events =
+		{
+			["playerlightningtargeted"] = function(owner)
+				if not owner.components.inventory:IsInsulated() then
+					if not inst.usefollowsymbol then
+						inst.usefollowsymbol = true
+						custom_backpack_labrat_setcolour(inst, 1)
+						inst:OnBackpackSkinChanged("custom_backpack_labrat")
+					elseif inst._backpack_labrat_colour == 2 then
+						custom_backpack_labrat_setcolour(inst, 3)
+						inst:ForEachSkinFollowFx(custom_backpack_labrat_setfxcolour, 3)
+					end
+				end
+			end,
+			["attacked"] = function(owner, data)
+				if data and data.stimuli == "electric" then
+					inst._backpack_labrat_events["playerlightningtargeted"](owner)
+				end
+			end,
+			["haunted"] = function(_)
+				if inst.usefollowsymbol then
+					inst.usefollowsymbol = nil
+					custom_backpack_labrat_setcolour(inst, nil)
+					inst:OnBackpackSkinChanged("custom_backpack_labrat")
+				end
+			end,
+			["freeze"] = function(_)
+				if not inst.usefollowsymbol then
+					inst.usefollowsymbol = true
+					custom_backpack_labrat_setcolour(inst, 2)
+					inst:OnBackpackSkinChanged("custom_backpack_labrat")
+				elseif inst._backpack_labrat_colour == 1 then
+					custom_backpack_labrat_setcolour(inst, 3)
+					inst:ForEachSkinFollowFx(custom_backpack_labrat_setfxcolour, 3)
+				end
+			end,
+		}
+		inst:ListenForEvent("haunted", inst._backpack_labrat_events["haunted"])
+	end,
+	uninitialize = function(inst)
+		inst:RemoveEventCallback("haunted", inst._backpack_labrat_events["haunted"])
+		if inst._backpack_labrat_owner then
+			for k, v in pairs(inst._backpack_labrat_events) do
+				inst:RemoveEventCallback(k, v, inst._backpack_labrat_owner)
+			end
+			inst._backpack_labrat_owner = nil
+		end
+		inst._backpack_labrat_events = nil
+		inst._backpack_labrat_colour = nil
+		inst.usefollowsymbol = nil
+	end,
+	onequip = function(inst, owner)
+		if inst._backpack_labrat_owner then
+			for k, v in pairs(inst._backpack_labrat_events) do
+				inst:RemoveEventCallback(k, v, inst._backpack_labrat_owner)
+			end
+		end
+		inst._backpack_labrat_owner = owner
+		if owner then
+			for k, v in pairs(inst._backpack_labrat_events) do
+				inst:ListenForEvent(k, v, owner)
+			end
+		end
+	end,
+	onunequip = function(inst, owner)
+		if inst._backpack_labrat_owner then
+			assert(owner == inst._backpack_labrat_owner)
+			for k, v in pairs(inst._backpack_labrat_events) do
+				inst:RemoveEventCallback(k, v, inst._backpack_labrat_owner)
+			end
+			inst._backpack_labrat_owner = nil
+		end
+	end,
+	onsave = function(inst, data)
+		data.labrat_colour = inst._backpack_labrat_colour
+	end,
+	onload = function(inst, data, ents)
+		if data.labrat_colour then
+			custom_backpack_labrat_setcolour(inst, data.labrat_colour)
+			if not inst.usefollowsymbol then
+				inst.usefollowsymbol = true
+				inst:OnBackpackSkinChanged("custom_backpack_labrat")
+			else
+				inst:ForEachSkinFollowFx(custom_backpack_labrat_setfxcolour, inst._backpack_labrat_colour)
+			end
+		elseif inst.usefollowsymbol then
+			inst.usefollowsymbol = nil
+			custom_backpack_labrat_setcolour(inst, nil)
+			inst:OnBackpackSkinChanged("custom_backpack_labrat")
+		end
+	end,
+}
+
 table.insert(prefs, CreatePrefabSkin("custom_backpack_labrat",{
     assets = {
         Asset("DYNAMIC_ANIM", "anim/dynamic/custom_backpack_labrat.zip"),
@@ -1782,7 +1905,7 @@ table.insert(prefs, CreatePrefabSkin("custom_backpack_labrat",{
     },
     base_prefab = "backpack" ,
     build_name_override = "custom_backpack_labrat" ,
-    init_fn = function(inst) backpack_init_fn(inst, "custom_backpack_labrat") end,
+    init_fn = function(inst) backpack_init_fn(inst, "custom_backpack_labrat", custom_backpack_labrat_fns) end,
     rarity = "Loyal",
     release_group = groupid,
     skin_tags = { "BACKPACK", "CRAFTABLE", },
