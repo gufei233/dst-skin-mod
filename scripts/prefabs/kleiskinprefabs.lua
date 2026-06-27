@@ -13878,6 +13878,203 @@ table.insert(prefs, CreatePrefabSkin("custom_torch_tesla",{
     type = "item",
 }))
 
+table.insert(prefs, CreatePrefabSkin("custom_backpack_minigolf",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_backpack_minigolf.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_backpack_minigolf.dyn"),
+    },
+	base_prefab = "backpack",
+	build_name_override = "custom_backpack_minigolf",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) backpack_init_fn(inst, "custom_backpack_minigolf") end,
+	skin_tags = { "CAWNIVAL", "BACKPACK", "CRAFTABLE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_minisign_cawnival",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_minisign_cawnival.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_minisign_cawnival.dyn"),
+    },
+	base_prefab = "minisign",
+	build_name_override = "custom_minisign_cawnival",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) minisign_init_fn(inst, "custom_minisign_cawnival", "sign_mini_cawnival" ) end,
+	skin_tags = { "CAWNIVAL", "MINISIGN", "CRAFTABLE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_minisign_cawnival_drawn",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_minisign_cawnival.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_minisign_cawnival.dyn"),
+    },
+	base_prefab = "minisign_drawn",
+	type = "item",
+	build_name_override = "custom_minisign_cawnival",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) minisign_drawn_init_fn(inst, "custom_minisign_cawnival", "sign_mini_cawnival" ) end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_minisign_cawnival_item",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_minisign_cawnival.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_minisign_cawnival.dyn"),
+    },
+	base_prefab = "minisign_item",
+	type = "item",
+	build_name_override = "custom_minisign_cawnival",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) minisign_item_init_fn(inst, "custom_minisign_cawnival", "sign_mini_cawnival" ) end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_mushroom_light_cawnival",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_mushroom_light_cawnival.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_mushroom_light_cawnival.dyn"),
+    },
+	base_prefab = "mushroom_light",
+	build_name_override = "custom_mushroom_light_cawnival",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) mushroom_light_init_fn(inst, "custom_mushroom_light_cawnival") end,
+	skin_tags = { "MUSHROOM_LIGHT", "CAWNIVAL", "CRAFTABLE", },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_researchlab4_minigolf_green",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_researchlab4_minigolf_green.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_researchlab4_minigolf_green.dyn"),
+    },
+	base_prefab = "researchlab4",
+	build_name_override = "custom_researchlab4_minigolf_green",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) researchlab4_init_fn(inst, "custom_researchlab4_minigolf_green") end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_researchlab4_minigolf_purple",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_researchlab4_minigolf_purple.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_researchlab4_minigolf_purple.dyn"),
+    },
+	base_prefab = "researchlab4",
+	build_name_override = "custom_researchlab4_minigolf_purple",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) researchlab4_init_fn(inst, "custom_researchlab4_minigolf_purple") end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_researchlab4_minigolf_red",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_researchlab4_minigolf_red.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_researchlab4_minigolf_red.dyn"),
+    },
+	base_prefab = "researchlab4",
+	build_name_override = "custom_researchlab4_minigolf_red",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) researchlab4_init_fn(inst, "custom_researchlab4_minigolf_red") end,
+	skin_tags = { },
+	release_group = groupid,
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_green",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_tophat_minigolf_green.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_tophat_minigolf_green.dyn"),
+    },
+	base_prefab = "tophat",
+	build_name_override = "custom_tophat_minigolf_green",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) tophat_init_fn(inst, "custom_tophat_minigolf_green") end,
+	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
+	release_group = groupid,
+	granted_items = { "custom_researchlab4_minigolf_green", },
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_purple",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_tophat_minigolf_purple.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_tophat_minigolf_purple.dyn"),
+    },
+	base_prefab = "tophat",
+	build_name_override = "custom_tophat_minigolf_purple",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) tophat_init_fn(inst, "custom_tophat_minigolf_purple") end,
+	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
+	release_group = groupid,
+	granted_items = { "custom_researchlab4_minigolf_purple", },
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_red",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_tophat_minigolf_red.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_tophat_minigolf_red.dyn"),
+    },
+	base_prefab = "tophat",
+	build_name_override = "custom_tophat_minigolf_red",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) tophat_init_fn(inst, "custom_tophat_minigolf_red") end,
+	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
+	release_group = groupid,
+	granted_items = { "custom_researchlab4_minigolf_red", },
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_torch_cawnival",
+{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_torch_cawnival.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_torch_cawnival.dyn"),
+    },
+	base_prefab = "torch",
+	build_name_override = "custom_torch_cawnival",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	prefabs = { "torchfire_cawnival", },
+	init_fn = function(inst) torch_init_fn(inst, "custom_torch_cawnival") end,
+	skin_tags = { "CAWNIVAL", "TORCH", "CRAFTABLE", },
+	fx_prefab = { "torchfire_cawnival", },
+	release_group = groupid,
+}))
+
 table.insert(prefs, CreatePrefabSkin("custom_tornado_crow",{
     assets = {
         Asset("DYNAMIC_ANIM", "anim/dynamic/custom_tornado_crow.zip"),

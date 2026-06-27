@@ -1,7 +1,7 @@
 name = "古菇顾"
 description = "改自咸鱼，宋壹柒，2026.04.02"
 author = "顾绯"
-version = "V6.0.2"
+version = "V6.1.0"
 
 forumthread = ""
 

@@ -11663,6 +11663,145 @@ table.insert(prefs, CreatePrefabSkin("torch_tesla",
 	release_group = 168,
 }))
 
+table.insert(prefs, CreatePrefabSkin("backpack_minigolf",
+{
+	base_prefab = "backpack",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) backpack_init_fn(inst, "backpack_minigolf", skin_custom) end,
+	skin_tags = { "CAWNIVAL", "BACKPACK", "CRAFTABLE", },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("minisign_cawnival",
+{
+	base_prefab = "minisign",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) minisign_init_fn(inst, "minisign_cawnival", "sign_mini_cawnival" ) end,
+	skin_tags = { "CAWNIVAL", "MINISIGN", "CRAFTABLE", },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("minisign_cawnival_drawn",
+{
+	base_prefab = "minisign_drawn",
+	type = "item",
+	build_name_override = "minisign_cawnival",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) minisign_drawn_init_fn(inst, "minisign_cawnival", "sign_mini_cawnival" ) end,
+	skin_tags = { },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("minisign_cawnival_item",
+{
+	base_prefab = "minisign_item",
+	type = "item",
+	build_name_override = "minisign_cawnival",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst) minisign_item_init_fn(inst, "minisign_cawnival", "sign_mini_cawnival" ) end,
+	skin_tags = { },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("mushroom_light_cawnival",
+{
+	base_prefab = "mushroom_light",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) mushroom_light_init_fn(inst, "mushroom_light_cawnival", skin_custom) end,
+	skin_tags = { "MUSHROOM_LIGHT", "CAWNIVAL", "CRAFTABLE", },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("researchlab4_minigolf_green",
+{
+	base_prefab = "researchlab4",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) researchlab4_init_fn(inst, "researchlab4_minigolf_green", skin_custom) end,
+	skin_tags = { },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("researchlab4_minigolf_purple",
+{
+	base_prefab = "researchlab4",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) researchlab4_init_fn(inst, "researchlab4_minigolf_purple", skin_custom) end,
+	skin_tags = { },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("researchlab4_minigolf_red",
+{
+	base_prefab = "researchlab4",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) researchlab4_init_fn(inst, "researchlab4_minigolf_red", skin_custom) end,
+	skin_tags = { },
+	release_group = 183,
+}))
+
+table.insert(prefs, CreatePrefabSkin("tophat_minigolf_green",
+{
+	base_prefab = "tophat",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) tophat_init_fn(inst, "tophat_minigolf_green", skin_custom) end,
+	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
+	release_group = 183,
+	granted_items = { "researchlab4_minigolf_green", },
+}))
+
+table.insert(prefs, CreatePrefabSkin("tophat_minigolf_purple",
+{
+	base_prefab = "tophat",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) tophat_init_fn(inst, "tophat_minigolf_purple", skin_custom) end,
+	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
+	release_group = 183,
+	granted_items = { "researchlab4_minigolf_purple", },
+}))
+
+table.insert(prefs, CreatePrefabSkin("tophat_minigolf_red",
+{
+	base_prefab = "tophat",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	init_fn = function(inst, skin_custom) tophat_init_fn(inst, "tophat_minigolf_red", skin_custom) end,
+	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
+	release_group = 183,
+	granted_items = { "researchlab4_minigolf_red", },
+}))
+
+table.insert(prefs, CreatePrefabSkin("torch_cawnival",
+{
+	base_prefab = "torch",
+	type = "item",
+	rarity = "Distinguished",
+	rarity_modifier = "Woven",
+	prefabs = { "torchfire_cawnival", },
+	init_fn = function(inst, skin_custom) torch_init_fn(inst, "torch_cawnival", skin_custom) end,
+	skin_tags = { "CAWNIVAL", "TORCH", "CRAFTABLE", },
+	fx_prefab = { "torchfire_cawnival", },
+	release_group = 183,
+}))
+
 table.insert(prefs, CreatePrefabSkin("tornado_crow",
 {
 	base_prefab = "tornado",
