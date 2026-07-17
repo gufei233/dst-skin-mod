@@ -14020,7 +14020,7 @@ table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_green",
 	init_fn = function(inst) tophat_init_fn(inst, "custom_tophat_minigolf_green") end,
 	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
 	release_group = groupid,
-	granted_items = { "custom_researchlab4_minigolf_green", },
+	granted_items = { "custom_researchlab4_minigolf_green", "custom_walrushat_minigolf_green", },
 }))
 
 table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_purple",
@@ -14037,7 +14037,7 @@ table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_purple",
 	init_fn = function(inst) tophat_init_fn(inst, "custom_tophat_minigolf_purple") end,
 	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
 	release_group = groupid,
-	granted_items = { "custom_researchlab4_minigolf_purple", },
+	granted_items = { "custom_researchlab4_minigolf_purple", "custom_walrushat_minigolf_purple", },
 }))
 
 table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_red",
@@ -14054,7 +14054,7 @@ table.insert(prefs, CreatePrefabSkin("custom_tophat_minigolf_red",
 	init_fn = function(inst) tophat_init_fn(inst, "custom_tophat_minigolf_red") end,
 	skin_tags = { "CAWNIVAL", "TOPHAT", "CRAFTABLE", },
 	release_group = groupid,
-	granted_items = { "custom_researchlab4_minigolf_red", },
+	granted_items = { "custom_researchlab4_minigolf_red", "custom_walrushat_minigolf_red", },
 }))
 
 table.insert(prefs, CreatePrefabSkin("custom_torch_cawnival",
@@ -15323,6 +15323,51 @@ table.insert(prefs, CreatePrefabSkin("custom_walrushat_ceremonial",{
     release_group = groupid,
     skin_sound = { ["equip"] = "skin_sfx/common/walrushat_ceremonial", },
     skin_tags = { "WALRUSHAT", "CRAFTABLE", },
+    type = "item",
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_walrushat_minigolf_green",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_walrushat_minigolf_green.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_walrushat_minigolf_green.dyn"),
+    },
+    base_prefab = "walrushat" ,
+    build_name_override = "custom_walrushat_minigolf_green" ,
+    init_fn = function(inst) walrushat_init_fn(inst, "custom_walrushat_minigolf_green") end,
+    rarity = "Distinguished",
+    rarity_modifier = "Woven",
+    release_group = groupid,
+    skin_tags = { },
+    type = "item",
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_walrushat_minigolf_purple",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_walrushat_minigolf_purple.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_walrushat_minigolf_purple.dyn"),
+    },
+    base_prefab = "walrushat" ,
+    build_name_override = "custom_walrushat_minigolf_purple" ,
+    init_fn = function(inst) walrushat_init_fn(inst, "custom_walrushat_minigolf_purple") end,
+    rarity = "Distinguished",
+    rarity_modifier = "Woven",
+    release_group = groupid,
+    skin_tags = { },
+    type = "item",
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_walrushat_minigolf_red",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_walrushat_minigolf_red.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_walrushat_minigolf_red.dyn"),
+    },
+    base_prefab = "walrushat" ,
+    build_name_override = "custom_walrushat_minigolf_red" ,
+    init_fn = function(inst) walrushat_init_fn(inst, "custom_walrushat_minigolf_red") end,
+    rarity = "Distinguished",
+    rarity_modifier = "Woven",
+    release_group = groupid,
+    skin_tags = { },
     type = "item",
 }))
 

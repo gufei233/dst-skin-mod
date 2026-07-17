@@ -1207,8 +1207,8 @@ PREFAB_SKINS = {
 		"minerhat_western",
 	},
 	minisign =
-		"minisign_cawnival",
 	{
+		"minisign_cawnival",
 		"minisign_fantasy",
 		"minisign_ornate",
 		"minisign_picketbrown",
@@ -1216,8 +1216,8 @@ PREFAB_SKINS = {
 		"minisign_picketwhite",
 	},
 	minisign_drawn =
-		"minisign_cawnival_drawn",
 	{
+		"minisign_cawnival_drawn",
 		"minisign_fantasy_drawn",
 		"minisign_ornate_drawn",
 		"minisign_picketbrown_drawn",
@@ -1225,8 +1225,8 @@ PREFAB_SKINS = {
 		"minisign_picketwhite_drawn",
 	},
 	minisign_item =
-		"minisign_cawnival_item",
 	{
+		"minisign_cawnival_item",
 		"minisign_fantasy_item",
 		"minisign_ornate_item",
 		"minisign_picketbrown_item",
@@ -1262,8 +1262,8 @@ PREFAB_SKINS = {
 		"mushroom_farm_mystical",
 	},
 	mushroom_light =
-		"mushroom_light_cawnival",
 	{
+		"mushroom_light_cawnival",
 		"mushroom_light_an",
 		"mushroom_light_festive",
 		"mushroom_light_hallowed",
@@ -1511,9 +1511,6 @@ PREFAB_SKINS = {
 		"researchlab3_nature",
 	},
 	researchlab4 =
-		"researchlab4_minigolf_green",
-		"researchlab4_minigolf_purple",
-		"researchlab4_minigolf_red",
 	{
 		"researchlab4_catcoon_costume",
 		"researchlab4_catcoon_costumep",
@@ -1528,6 +1525,9 @@ PREFAB_SKINS = {
 		"researchlab4_hutch_costume",
 		"researchlab4_hutch_costumep",
 		"researchlab4_merchant",
+		"researchlab4_minigolf_green",
+		"researchlab4_minigolf_purple",
+		"researchlab4_minigolf_red",
 		"researchlab4_tophat_circus",
 		"researchlab4_tophat_harlequin",
 		"researchlab4_tophat_spiked",
@@ -1846,11 +1846,11 @@ PREFAB_SKINS = {
 		"tophat_wizard",
 	},
 	torch =
-		"torch_cawnival",
 	{
 		"torch_barber",
 		"torch_carrat",
 		"torch_carrat_alt",
+		"torch_cawnival",
 		"torch_nautical",
 		"torch_pillar",
 		"torch_pillar_alt",
@@ -2040,6 +2040,9 @@ PREFAB_SKINS = {
 		"walrushat_blue",
 		"walrushat_cawnival",
 		"walrushat_ceremonial",
+		"walrushat_minigolf_green",
+		"walrushat_minigolf_purple",
+		"walrushat_minigolf_red",
 		"walrushat_party",
 	},
 	walter =
