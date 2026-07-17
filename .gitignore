@@ -34,3 +34,4 @@ CLAUDE_GUIDE.md
 # Local analysis / repo-specific notes and helper scripts
 blog.md
 tools/compare_missing_skins.ps1
+tools/validate_skin_update.ps1
