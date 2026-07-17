@@ -28,10 +28,7 @@ keystream.bin
 keystream_positions.pkl
 
 # Local AI handoff / notes
-AI_UPDATE_GUIDE.md
 CLAUDE_GUIDE.md
 
-# Local analysis / repo-specific notes and helper scripts
+# Local analysis / repo-specific notes
 blog.md
-tools/compare_missing_skins.ps1
-tools/validate_skin_update.ps1
