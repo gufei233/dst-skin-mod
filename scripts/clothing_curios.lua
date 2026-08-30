@@ -527,6 +527,57 @@ local _ =
         torso_tuck = "untucked",
         type = "body",
     },
+    custom_body_onepiece2_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_onepiece2_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_onepiece2_beach.dyn"),
+        },
+        build_name_override = "custom_body_onepiece2_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg_wilson", },walter = { leg = "leg_walter", },wanda = { leg = "leg_wanda", },warly = { leg = "leg_warly", },waxwell = { leg = "leg_waxwell", },webber = { leg = "leg_webber", },wormwood = { leg = "leg_wormwood", },wortox = { leg = "leg_wortox", },wurt = { leg = "leg_wurt", },wx78 = { leg = "leg_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
+    custom_body_onepiece3_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_onepiece3_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_onepiece3_beach.dyn"),
+        },
+        build_name_override = "custom_body_onepiece3_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg_wilson", },walter = { leg = "leg_walter", },wanda = { leg = "leg_wanda", },warly = { leg = "leg_warly", },waxwell = { leg = "leg_waxwell", },webber = { leg = "leg_webber", },wormwood = { leg = "leg_wormwood", },wortox = { leg = "leg_wortox", },wurt = { leg = "leg_wurt", },wx78 = { leg = "leg_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
+    custom_body_onepiece_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_onepiece_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_onepiece_beach.dyn"),
+        },
+        build_name_override = "custom_body_onepiece_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg_wilson", },walter = { leg = "leg_walter", },wanda = { leg = "leg_wanda", },warly = { leg = "leg_warly", },waxwell = { leg = "leg_waxwell", },webber = { leg = "leg_webber", },wormwood = { leg = "leg_wormwood", },wortox = { leg = "leg_wortox", },wurt = { leg = "leg_wurt", },wx78 = { leg = "leg_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
     custom_body_outerwear_quilted_red_cardinal =
     {
         assets = {
@@ -859,6 +910,57 @@ local _ =
         torso_tuck = "untucked",
         type = "body",
     },
+    custom_body_sailor2_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_sailor2_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_sailor2_beach.dyn"),
+        },
+        build_name_override = "custom_body_sailor2_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg", torso = "torso", },walter = { leg = "leg_walter", torso = "torso_walter", },wanda = { leg = "leg_wanda", torso = "torso_wanda", },warly = { leg = "leg_warly", torso = "torso_warly", },waxwell = { leg = "leg_waxwell", torso = "torso_waxwell", },webber = { leg = "leg_webber", torso = "torso_webber", },wormwood = { leg = "leg_wormwood", torso = "torso_wormwood", },wortox = { leg = "leg_wortox", torso = "torso_wortox", },wurt = { leg = "leg_wurt", torso = "torso_wurt", },wx78 = { leg = "leg_wx78", torso = "torso_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
+    custom_body_sailor3_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_sailor3_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_sailor3_beach.dyn"),
+        },
+        build_name_override = "custom_body_sailor3_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg", torso = "torso", },walter = { leg = "leg_walter", torso = "torso_walter", },wanda = { leg = "leg_wanda", torso = "torso_wanda", },warly = { leg = "leg_warly", torso = "torso_warly", },waxwell = { leg = "leg_waxwell", torso = "torso_waxwell", },webber = { leg = "leg_webber", torso = "torso_webber", },wormwood = { leg = "leg_wormwood", torso = "torso_wormwood", },wortox = { leg = "leg_wortox", torso = "torso_wortox", },wurt = { leg = "leg_wurt", torso = "torso_wurt", },wx78 = { leg = "leg_wx78", torso = "torso_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
+    custom_body_sailor_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_sailor_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_sailor_beach.dyn"),
+        },
+        build_name_override = "custom_body_sailor_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg", torso = "torso", },walter = { leg = "leg_walter", torso = "torso_walter", },wanda = { leg = "leg_wanda", torso = "torso_wanda", },warly = { leg = "leg_warly", torso = "torso_warly", },waxwell = { leg = "leg_waxwell", torso = "torso_waxwell", },webber = { leg = "leg_webber", torso = "torso_webber", },wormwood = { leg = "leg_wormwood", torso = "torso_wormwood", },wortox = { leg = "leg_wortox", torso = "torso_wortox", },wurt = { leg = "leg_wurt", torso = "torso_wurt", },wx78 = { leg = "leg_wx78", torso = "torso_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
     custom_body_silk_eveningrobe_blue_frost =
     {
         assets = {
@@ -998,6 +1100,57 @@ local _ =
         torso_tuck = "skirt",
         type = "body",
     },
+    custom_body_skirt2_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_skirt2_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_skirt2_beach.dyn"),
+        },
+        build_name_override = "custom_body_skirt2_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "skirt", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg_wilson", torso = "torso_wilson", },walter = { leg = "leg_walter", torso = "torso_walter", },wanda = { leg = "leg_wanda", torso = "torso_wanda", },warly = { leg = "leg_warly", torso = "torso_warly", },waxwell = { leg = "leg_waxwell", torso = "torso_waxwell", },webber = { leg = "leg_webber", torso = "torso_webber", },wormwood = { leg = "leg_wormwood", torso = "torso_wormwood", },wortox = { leg = "leg_wortox", torso = "torso_wortox", },wurt = { leg = "leg_wurt", torso = "torso_wurt", },wx78 = { leg = "leg_wx78", torso = "torso_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
+    custom_body_skirt3_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_skirt3_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_skirt3_beach.dyn"),
+        },
+        build_name_override = "custom_body_skirt3_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "skirt", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg_wilson", torso = "torso_wilson", },walter = { leg = "leg_walter", torso = "torso_walter", },wanda = { leg = "leg_wanda", torso = "torso_wanda", },warly = { leg = "leg_warly", torso = "torso_warly", },waxwell = { leg = "leg_waxwell", torso = "torso_waxwell", },webber = { leg = "leg_webber", torso = "torso_webber", },wormwood = { leg = "leg_wormwood", torso = "torso_wormwood", },wortox = { leg = "leg_wortox", torso = "torso_wortox", },wurt = { leg = "leg_wurt", torso = "torso_wurt", },wx78 = { leg = "leg_wx78", torso = "torso_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
+    custom_body_skirt_beach =
+    {
+        assets = {
+            Asset("DYNAMIC_ANIM", "anim/dynamic/custom_body_skirt_beach.zip"),
+            Asset("PKGREF", "anim/dynamic/custom_body_skirt_beach.dyn"),
+        },
+        build_name_override = "custom_body_skirt_beach" ,
+        type = "body",
+        skin_tags = { "SEASIDE", "CLOTHING_BODY", "CLOTHING", },
+        symbol_overrides = { "arm_upper", "leg", "skirt", "torso", "torso_pelvis", },
+        symbol_overrides_by_character = { default = { leg = "leg_wilson", torso = "torso_wilson", },walter = { leg = "leg_walter", torso = "torso_walter", },wanda = { leg = "leg_wanda", torso = "torso_wanda", },warly = { leg = "leg_warly", torso = "torso_warly", },waxwell = { leg = "leg_waxwell", torso = "torso_waxwell", },webber = { leg = "leg_webber", torso = "torso_webber", },wormwood = { leg = "leg_wormwood", torso = "torso_wormwood", },wortox = { leg = "leg_wortox", torso = "torso_wortox", },wurt = { leg = "leg_wurt", torso = "torso_wurt", },wx78 = { leg = "leg_wx78", torso = "torso_wx78", },},
+        torso_tuck = "untucked",
+        rarity = "Classy",
+        rarity_modifier = "Woven",
+        release_group = groupid,
+    },
+
     custom_body_sleepgown_blue_ice =
     {
         assets = {

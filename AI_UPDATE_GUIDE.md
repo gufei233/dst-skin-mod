@@ -155,14 +155,15 @@ Almost every `.dyn` has a matching `.zip` of the same name. A small number of `.
 
 ## Current Known Diff State
 
-Last updated: 2026-07-17
+Last checked: 2026-08-30
 
-- official prefab skin count (normalized): `1732`
-- mod prefab skin count (normalized): `1732`
-- official clothing key count: `1127`
-- mod clothing key count (normalized): `1124`
-- official `scripts.zip` timestamp: `2026-07-10 18:42:21`
-- current update release group: `183`
+- official prefab skin count (normalized): `1736`
+- mod prefab skin count (normalized): `1736`
+- official clothing key count: `1136`
+- mod clothing key count (normalized): `1133`
+- official `scripts.zip` timestamp: `2026-08-14 22:10:55`
+- current update release group: `184`
+- latest check result: no official prefab or clothing skin delta detected
 
 From `compare_missing_skins.ps1` normalized-name comparison:
 
@@ -940,3 +941,58 @@ Verification after update:
 - missing asset references: `0`
 - incorrect new internal build names: `0`
 - referenced mirror blocks matching official key fields: `6 / 6`
+
+### 2026-08-11: Checked official data and hardened validator
+
+Official source files were checked again. Their timestamps remain `2026-07-10 18:42:21`, and the normalized comparison still reports no missing prefab skin names.
+
+No skin definitions, clothing entries, animation assets, or mod version changes were needed in this check. The validation script was adjusted to pass the repository path to Git as a temporary `safe.directory` value, so it works in environments where the workspace and current user have different Git ownership metadata. The global Git configuration is not changed.
+
+### 2026-08-30: Added release group 184 skins and synchronized existing WX-78 tags
+
+Official update source:
+
+- scripts.zip: 56,175,396 bytes, timestamp 2026-08-14 22:10:55
+- anim_dynamic.zip: 16,849,160 bytes, timestamp 2026-08-14 22:10:55
+
+Normalized diff before update:
+
+- OFFICIAL_PREFAB_SKINS=1736
+- MOD_PREFAB_SKINS_NORMALIZED=1732
+- MISSING_PREFAB_SKINS=4
+- nine new real clothing entries beyond the five structural constants
+
+Added prefab skins:
+
+- parasol_polkadot
+- pitchfork_fork
+- shovel_spoon
+- waterballoon_insect
+
+Added clothing entries:
+
+- body_onepiece_beach, body_onepiece2_beach, body_onepiece3_beach
+- body_sailor_beach, body_sailor2_beach, body_sailor3_beach
+- body_skirt_beach, body_skirt2_beach, body_skirt3_beach
+
+The full semantic comparison also found four changed existing definitions. The official update added GOTHIC or JEWELBOX skin tags to:
+
+- wx78_dronedeliverysmall_gothic
+- wx78_dronedeliverysmall_jewelbox
+- wx78_dronezapremote_gothic
+- wx78_dronezapremote_jewelbox
+
+All runtime-relevant historical duplicates were updated consistently in both mirror and custom layers.
+
+Asset files added: 26 total (13 .dyn and 13 .zip). Every copied .zip had its internal build.bin name patched to the matching custom_ name. modinfo.lua was updated from V6.2.0 to V6.3.0.
+
+Verification after update:
+
+- normalized prefab coverage: 1736 / 1736, missing 0
+- clothing residual: the same five non-actionable structural keys
+- full semantic mirror comparison: all 1736 official definitions matched
+- missing asset references: 0
+- dynamic zip internal build-name mismatches: 0
+- duplicate definitions: only the documented 16-name historical baseline
+- git diff --check: passed
+- unified validator: VALIDATION_OK

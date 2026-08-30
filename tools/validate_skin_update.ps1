@@ -8,6 +8,7 @@ $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
 $modRoot = Split-Path -Parent $PSScriptRoot
+$gitSafeArgs = @('-c', "safe.directory=$modRoot")
 $failures = [Collections.Generic.List[string]]::new()
 $warnings = [Collections.Generic.List[string]]::new()
 $SkinId = @($SkinId | ForEach-Object { $_ -split ',' } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
@@ -393,9 +394,9 @@ try {
         $currentVersion = $versionMatch.Groups[1].Value
         Write-Output "Current version: $currentVersion"
 
-        $headModInfo = git show HEAD:modinfo.lua 2>$null
+        $headModInfo = git @gitSafeArgs show HEAD:modinfo.lua 2>$null
         $headVersionMatch = [regex]::Match(($headModInfo -join "`n"), '(?m)^version\s*=\s*"(V\d+\.\d+\.\d+)"\s*$')
-        $skinChanges = @(git status --porcelain -- scripts anim)
+        $skinChanges = @(git @gitSafeArgs status --porcelain -- scripts anim)
         if ($skinChanges.Count -gt 0 -and $headVersionMatch.Success -and $headVersionMatch.Groups[1].Value -eq $currentVersion) {
             Add-Failure "Skin/code changes exist but modinfo.lua version was not bumped from HEAD."
         }
@@ -403,7 +404,7 @@ try {
 
     $previousErrorActionPreference = $ErrorActionPreference
     $ErrorActionPreference = 'Continue'
-    $diffCheck = @(git diff --check 2>&1)
+    $diffCheck = @(git @gitSafeArgs diff --check 2>&1)
     $diffCheckExitCode = $LASTEXITCODE
     $ErrorActionPreference = $previousErrorActionPreference
     if ($diffCheckExitCode -ne 0) {
@@ -414,7 +415,7 @@ try {
         Write-Output "PASS: git diff --check"
     }
 
-    $stagedPaths = @(git diff --cached --name-only)
+    $stagedPaths = @(git @gitSafeArgs diff --cached --name-only)
     $forbiddenStagedPaths = @(
         'CLAUDE_GUIDE.md',
         'blog.md'

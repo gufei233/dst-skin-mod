@@ -9763,6 +9763,20 @@ table.insert(prefs, CreatePrefabSkin("custom_panflute_swamp",{
     type = "item",
 }))
 
+table.insert(prefs, CreatePrefabSkin("custom_parasol_polkadot",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_parasol_polkadot.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_parasol_polkadot.dyn"),
+    },
+    base_prefab = "grass_umbrella" ,
+    build_name_override = "custom_parasol_polkadot" ,
+    init_fn = function(inst) grass_umbrella_init_fn(inst, "custom_parasol_polkadot") end,
+    rarity = "ProofOfPurchase",
+    release_group = groupid,
+    skin_tags = { "GRASS_UMBRELLA", "CRAFTABLE", },
+    type = "item",
+}))
+
 table.insert(prefs, CreatePrefabSkin("custom_parasol_spring",{
     assets = {
         Asset("DYNAMIC_ANIM", "anim/dynamic/custom_parasol_spring.zip"),
@@ -10115,6 +10129,20 @@ table.insert(prefs, CreatePrefabSkin("custom_pighouse_logcabin",{
     rarity_modifier = "Woven",
     release_group = groupid,
     skin_tags = { "HOCKEY", "PIGHOUSE", "CRAFTABLE", },
+    type = "item",
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_pitchfork_fork",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_pitchfork_fork.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_pitchfork_fork.dyn"),
+    },
+    base_prefab = "pitchfork" ,
+    build_name_override = "custom_pitchfork_fork" ,
+    init_fn = function(inst) pitchfork_init_fn(inst, "custom_pitchfork_fork") end,
+    rarity = "ProofOfPurchase",
+    release_group = groupid,
+    skin_tags = { "PITCHFORK", "CRAFTABLE", },
     type = "item",
 }))
 
@@ -12089,6 +12117,20 @@ table.insert(prefs, CreatePrefabSkin("custom_shovel_northern",{
     rarity_modifier = "Woven",
     release_group = groupid,
     skin_tags = { "YOTC", "SHOVEL", "CRAFTABLE", },
+    type = "item",
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_shovel_spoon",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_shovel_spoon.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_shovel_spoon.dyn"),
+    },
+    base_prefab = "shovel" ,
+    build_name_override = "custom_shovel_spoon" ,
+    init_fn = function(inst) shovel_init_fn(inst, "custom_shovel_spoon") end,
+    rarity = "ProofOfPurchase",
+    release_group = groupid,
+    skin_tags = { "SHOVEL", "CRAFTABLE", },
     type = "item",
 }))
 
@@ -16361,6 +16403,20 @@ table.insert(prefs, CreatePrefabSkin("custom_warly_yule",{
     skin_tags = { "YULE", "BASE", "WARLY", },
     skins = { ghost_skin = "ghost_warly_build" , normal_skin = "custom_warly_yule" , },
     type = "base",
+}))
+
+table.insert(prefs, CreatePrefabSkin("custom_waterballoon_insect",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_waterballoon_insect.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_waterballoon_insect.dyn"),
+    },
+    base_prefab = "waterballoon" ,
+    build_name_override = "custom_waterballoon_insect" ,
+    init_fn = function(inst) waterballoon_init_fn(inst, "custom_waterballoon_insect") end,
+    rarity = "Loyal",
+    release_group = groupid,
+    skin_tags = { "WATERBALLOON", "CRAFTABLE", "INSECT", },
+    type = "item",
 }))
 
 table.insert(prefs, CreatePrefabSkin("custom_wateringcan_cactus",{
@@ -22335,7 +22391,7 @@ table.insert(prefs, CreatePrefabSkin("custom_wx78_dronedeliverysmall_gothic",{
     rarity = "Distinguished",
     rarity_modifier = "Woven",
     release_group = groupid,
-    skin_tags = { "WX78DRONEDELIVERY", "CRAFTABLE" },
+    skin_tags = { "WX78DRONEDELIVERY", "GOTHIC", "CRAFTABLE" },
     type = "item",
 }))
 
@@ -22381,7 +22437,7 @@ table.insert(prefs, CreatePrefabSkin("custom_wx78_dronedeliverysmall_jewelbox",{
     rarity = "Distinguished",
     rarity_modifier = "Woven",
     release_group = groupid,
-    skin_tags = { "WX78DRONEDELIVERY", "CRAFTABLE" },
+    skin_tags = { "WX78DRONEDELIVERY", "JEWELBOX", "CRAFTABLE" },
     type = "item",
 }))
 
@@ -22487,7 +22543,7 @@ table.insert(prefs, CreatePrefabSkin("custom_wx78_dronezapremote_gothic",{
     rarity = "Distinguished",
     rarity_modifier = "Woven",
     release_group = groupid,
-    skin_tags = { "WX78SCANNER", "CRAFTABLE" },
+    skin_tags = { "WX78SCANNER", "GOTHIC", "CRAFTABLE" },
     type = "item",
 }))
 
@@ -22503,7 +22559,7 @@ table.insert(prefs, CreatePrefabSkin("custom_wx78_dronezapremote_jewelbox",{
     rarity = "Distinguished",
     rarity_modifier = "Woven",
     release_group = groupid,
-    skin_tags = { "WX78SCANNER", "CRAFTABLE" },
+    skin_tags = { "WX78SCANNER", "JEWELBOX", "CRAFTABLE" },
     type = "item",
 }))
 
@@ -22579,7 +22635,7 @@ table.insert(prefs, CreatePrefabSkin("custom_wx78_dronezapremote_gothic",{
     rarity = "Distinguished",
     rarity_modifier = "Woven",
     release_group = groupid,
-    skin_tags = { "WX78SCANNER", "CRAFTABLE" },
+    skin_tags = { "WX78SCANNER", "GOTHIC", "CRAFTABLE" },
     type = "item",
 }))
 
@@ -22595,7 +22651,7 @@ table.insert(prefs, CreatePrefabSkin("custom_wx78_dronezapremote_jewelbox",{
     rarity = "Distinguished",
     rarity_modifier = "Woven",
     release_group = groupid,
-    skin_tags = { "WX78SCANNER", "CRAFTABLE" },
+    skin_tags = { "WX78SCANNER", "JEWELBOX", "CRAFTABLE" },
     type = "item",
 }))
 
