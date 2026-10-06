@@ -14956,6 +14956,20 @@ table.insert(prefs, CreatePrefabSkin("custom_wagdrone_rolling_fancy",{
     type = "item",
 }))
 
+table.insert(prefs, CreatePrefabSkin("custom_wagdrone_rolling_fire",{
+    assets = {
+        Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wagdrone_rolling_fire.zip"),
+        Asset("PKGREF", "anim/dynamic/custom_wagdrone_rolling_fire.dyn"),
+    },
+    base_prefab = "wagdrone_rolling" ,
+    build_name_override = "custom_wagdrone_rolling_fire" ,
+    init_fn = function(inst) wagdrone_rolling_init_fn(inst, "custom_wagdrone_rolling_fire") end,
+    rarity = "Loyal",
+    release_group = groupid,
+    skin_tags = { "WAGDRONE_ROLLING", },
+    type = "item",
+}))
+
 table.insert(prefs, CreatePrefabSkin("custom_wagdrone_rolling_spikey",{
     assets = {
         Asset("DYNAMIC_ANIM", "anim/dynamic/custom_wagdrone_rolling_spikey.zip"),

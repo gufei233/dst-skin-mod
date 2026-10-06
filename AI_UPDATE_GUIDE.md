@@ -155,15 +155,15 @@ Almost every `.dyn` has a matching `.zip` of the same name. A small number of `.
 
 ## Current Known Diff State
 
-Last checked: 2026-08-30
+Last checked: 2026-10-04
 
-- official prefab skin count (normalized): `1736`
-- mod prefab skin count (normalized): `1736`
+- official prefab skin count (normalized): `1737`
+- mod prefab skin count (normalized): `1737`
 - official clothing key count: `1136`
 - mod clothing key count (normalized): `1133`
-- official `scripts.zip` timestamp: `2026-08-14 22:10:55`
-- current update release group: `184`
-- latest check result: no official prefab or clothing skin delta detected
+- official `scripts.zip` timestamp: `2026-10-04 15:29:50`
+- current update release group: `185`
+- latest check result: added `wagdrone_rolling_fire`; no clothing delta, no changed existing definitions
 
 From `compare_missing_skins.ps1` normalized-name comparison:
 
@@ -189,6 +189,7 @@ The static count gap between mirror and custom layers does not automatically mea
 - The custom layer is not guaranteed to be fully self-contained per entry. Some `custom_*` entries intentionally reuse another custom build and therefore omit `assets` and/or point `build_name_override` at an existing custom build.
 - For coverage checks, trust the normalized diff tooling over raw `CreatePrefabSkin(...)` counts. Raw counts can drift because of mirror/custom structure and historical duplicate blocks.
 - When converting between official and custom-prefixed names, use the helper methods already used by `skinloader` (`start_with_that_prefix()` / `trip_that_prefix()`) rather than manual substring logic. Manual slicing previously caused broken string fallback lookups.
+- The mirror comparison in `tools/validate_skin_update.ps1` only diffs the fields listed in its `$semanticFields` array, and `skin_sound` is not one of them. As of 2026-10-04, the official definitions `wx78_scanner_catcoon` and `wx78_scanner_catcoon_item` carry a `skin_sound` block that neither the mirror nor the custom layer replicates (official 25 occurrences vs mirror 23). Read a `0 field mismatches` result as "no mismatch among the tracked fields", not as full equality with official.
 
 ## Standard Workflow: Check Whether Official Skin Data Updated
 
@@ -996,3 +997,47 @@ Verification after update:
 - duplicate definitions: only the documented 16-name historical baseline
 - git diff --check: passed
 - unified validator: VALIDATION_OK
+
+### 2026-10-04: Added `wagdrone_rolling_fire` (release_group 185)
+
+Official update source:
+
+- scripts.zip: 56,140,139 bytes, timestamp 2026-10-04 15:29:50
+- anim_dynamic.zip: 16,855,265 bytes, timestamp 2026-10-04 15:29:50
+
+Normalized diff before update:
+
+- OFFICIAL_PREFAB_SKINS=1737
+- MOD_PREFAB_SKINS_NORMALIZED=1736
+- MISSING_PREFAB_SKINS=1
+- clothing residual unchanged at the five structural constants
+
+Added prefab skin:
+
+- `wagdrone_rolling_fire` -- `base_prefab: wagdrone_rolling`, `type: item`, `rarity: Loyal`, `skin_tags: WAGDRONE_ROLLING`, `release_group: 185`, no `assets` and no `build_name_override` in official
+
+Reverse-reference review found only its own definition plus the `wagdrone_rolling` category entry in official `prefabskins.lua`. No existing definition, granted item, variant link, or helper changed, so the existing `wagdrone_rolling_init_fn` in `scripts/prefabskin.lua` was reused as-is. A full semantic comparison of all 1737 official blocks against the mirror over the tracked behaviour fields reported 0 field mismatches, and the category map comparison reported 0 differences outside the new member. (The one field that comparison does not cover is noted at the end of this entry.)
+
+What was done:
+
+1. `scripts/prefabskins.lua`: added `"wagdrone_rolling_fire"` to the `wagdrone_rolling` category list between `wagdrone_rolling_fancy` and `wagdrone_rolling_spikey`.
+2. `scripts/prefabs/skinprefabs.lua`: added the official-shaped mirror entry with `release_group = 185`.
+3. `scripts/prefabs/kleiskinprefabs.lua`: added the `custom_wagdrone_rolling_fire` runtime entry with `assets`, a custom-prefixed `build_name_override`, and `groupid`, matching the neighboring `wagdrone_rolling` entries.
+4. `anim/dynamic/custom_wagdrone_rolling_fire.dyn`: copied from official `data/anim/dynamic/wagdrone_rolling_fire.dyn` (278,328 bytes, byte-for-byte identical, renamed only).
+5. `anim/dynamic/custom_wagdrone_rolling_fire.zip`: extracted from official `anim_dynamic.zip` -> `anim/dynamic/wagdrone_rolling_fire.zip`, then `build.bin` patched from `wagdrone_rolling_fire` to `custom_wagdrone_rolling_fire`.
+
+Asset files added: 2 total (1 `.dyn` + 1 `.zip`). `modinfo.lua` was updated from `V6.3.0` to `V6.4.0`.
+
+Verification after update:
+
+- normalized prefab coverage: 1737 / 1737, missing 0
+- clothing residual: the same five non-actionable structural keys
+- full semantic mirror comparison over the validator's tracked behaviour fields: all 1737 official definitions matched, 0 field mismatches
+- category map: 369 / 369 categories, 0 differences
+- missing asset references: 0 (5128 DYNAMIC_ANIM/PKGREF references)
+- dynamic zip internal build-name mismatches: 0 (2564 zips)
+- duplicate definitions: only the documented 16-name historical baseline
+- git diff --check: passed
+- unified validator: VALIDATION_OK
+
+Known pre-existing gap confirmed during this check (not introduced by this update, and deliberately not fixed here): the mirror blocks `wx78_scanner_catcoon` and `wx78_scanner_catcoon_item` omit the official `skin_sound` field. Official `skinprefabs.lua` contains 25 `skin_sound` occurrences, the mirror 23 -- and the mirror already had 23 at HEAD, so the omission predates this update. Because `skin_sound` is not part of the field list the comparison uses, "0 field mismatches" above means "0 mismatches among the tracked fields", not byte-level equality with official. See the corresponding note in "Current Repository Caveats".
