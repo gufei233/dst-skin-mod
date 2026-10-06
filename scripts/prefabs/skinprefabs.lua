@@ -19663,6 +19663,7 @@ table.insert(prefs, CreatePrefabSkin("wx78_scanner_catcoon",
 	rarity = "ProofOfPurchase",
 	init_fn = function(inst, skin_custom) wx78_scanner_init_fn(inst, "wx78_scanner_catcoon", skin_custom) end,
 	skin_tags = { "WX78SCANNER", "CRAFTABLE", },
+	skin_sound = { ["genericuse"] = { ["deactivate"] = "WX_rework/scanner/deactivate_catcoon", ["locked_on"] = "WX_rework/scanner/locked_on_catcoon", }, },
 	release_group = 169,
 	granted_items = { "wx78_scanner_succeeded_catcoon", },
 }))
@@ -19675,6 +19676,7 @@ table.insert(prefs, CreatePrefabSkin("wx78_scanner_catcoon_item",
 	rarity = "ProofOfPurchase",
 	init_fn = function(inst, skin_custom) wx78_scanner_item_init_fn(inst, "wx78_scanner_catcoon", skin_custom) end,
 	skin_tags = { },
+	skin_sound = { ["genericuse"] = { ["deactivate"] = "WX_rework/scanner/deactivate_catcoon", ["locked_on"] = "WX_rework/scanner/locked_on_catcoon", }, },
 	release_group = 169,
 }))
 

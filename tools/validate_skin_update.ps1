@@ -361,6 +361,7 @@ try {
                 'prefabs',
                 'fx_prefab',
                 'skin_tags',
+                'skin_sound',
                 'init_fn'
             )
             foreach ($blockName in @($blocksToCompare) | Sort-Object) {

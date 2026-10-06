@@ -68,6 +68,9 @@ Tracked workflow files and helper scripts:
 
 - `AI_UPDATE_GUIDE.md`
 - `tools\compare_missing_skins.ps1`
+- `tools\compare_skin_definitions.ps1`
+- `tools\compare_skin_categories.ps1`
+- `tools\patch_build_name.py`
 - `tools\validate_skin_update.ps1`
 
 These files are part of the public repository and must be kept synchronized with workflow changes. `CLAUDE_GUIDE.md` and `blog.md` remain local-only notes and must not be force-added.
@@ -163,6 +166,7 @@ Last checked: 2026-10-04
 - mod clothing key count (normalized): `1133`
 - official `scripts.zip` timestamp: `2026-10-04 15:29:50`
 - current update release group: `185`
+- `skin_sound` coverage (official / mirror / custom): `25 / 25 / 25`
 - latest check result: added `wagdrone_rolling_fire`; no clothing delta, no changed existing definitions
 
 From `compare_missing_skins.ps1` normalized-name comparison:
@@ -189,7 +193,7 @@ The static count gap between mirror and custom layers does not automatically mea
 - The custom layer is not guaranteed to be fully self-contained per entry. Some `custom_*` entries intentionally reuse another custom build and therefore omit `assets` and/or point `build_name_override` at an existing custom build.
 - For coverage checks, trust the normalized diff tooling over raw `CreatePrefabSkin(...)` counts. Raw counts can drift because of mirror/custom structure and historical duplicate blocks.
 - When converting between official and custom-prefixed names, use the helper methods already used by `skinloader` (`start_with_that_prefix()` / `trip_that_prefix()`) rather than manual substring logic. Manual slicing previously caused broken string fallback lookups.
-- The mirror comparison in `tools/validate_skin_update.ps1` only diffs the fields listed in its `$semanticFields` array, and `skin_sound` is not one of them. As of 2026-10-04, the official definitions `wx78_scanner_catcoon` and `wx78_scanner_catcoon_item` carry a `skin_sound` block that neither the mirror nor the custom layer replicates (official 25 occurrences vs mirror 23). Read a `0 field mismatches` result as "no mismatch among the tracked fields", not as full equality with official.
+- The field comparisons in `tools\validate_skin_update.ps1` and `tools\compare_skin_definitions.ps1` only diff the fields named in their `$semanticFields` array, so a field that official defines and the mod omits entirely stays invisible until something looks for it by name. That is how the `skin_sound` omission on `wx78_scanner_catcoon` and `wx78_scanner_catcoon_item` survived several update cycles: `skin_sound` was not in the list. Both tools now list it, and `tools\compare_skin_definitions.ps1` additionally diffs the complete top-level field-name sets for exactly this reason. When official adds a behaviour-bearing field, add it to `$semanticFields` in both tools.
 
 ## Standard Workflow: Check Whether Official Skin Data Updated
 
@@ -249,7 +253,10 @@ Official updates can change an existing skin without adding a new ID. Compare th
 - `prefabs` and `fx_prefab`
 - `linked_skinname`
 - `skins` and variant mappings
+- `skin_sound`
 - helper functions in `scripts/prefabskin.lua`
+
+Run `tools\compare_skin_definitions.ps1` first: it compares every official definition, reports value mismatches for the tracked fields, and separately diffs the complete top-level field-name sets so a field that official has and the mirror omits entirely is still caught. No tracked list is complete, so the field-name-set check is not optional. Then run `tools\compare_skin_categories.ps1` for membership moves.
 
 For every newly missing skin ID, search the official source files for all references to that ID, not only its own `CreatePrefabSkin(...)` block. This reverse-reference check finds existing parent skins, bundles, variants, or helpers that must also change.
 
@@ -583,11 +590,12 @@ For each new name, determine:
 ### Phase 5: Re-verify
 
 1. run `tools\validate_skin_update.ps1` with the touched official skin IDs
-2. confirm normalized prefab coverage is complete and the five clothing structural keys are unchanged
-3. confirm `prefabskins.lua` table structure is valid
-4. confirm there are no duplicates outside the documented historical baseline
-5. confirm every asset reference exists and every dynamic zip internal build name matches its filename
-6. manually verify the reported official reverse references and changed existing fields
+2. run `tools\compare_skin_definitions.ps1` and `tools\compare_skin_categories.ps1`; both must end in `DEFINITIONS_OK` / `CATEGORIES_OK`
+3. confirm normalized prefab coverage is complete and the five clothing structural keys are unchanged
+4. confirm `prefabskins.lua` table structure is valid
+5. confirm there are no duplicates outside the documented historical baseline
+6. confirm every asset reference exists and every dynamic zip internal build name matches its filename
+7. manually verify the reported official reverse references and changed existing fields
 
 ### Phase 6: Version and Git preflight
 
@@ -623,8 +631,19 @@ After a correct update:
 # Run normalized diff (fastest way to check for missing skins)
 powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\compare_missing_skins.ps1
 
+# Full definition comparison: name coverage, tracked field values, complete field-name sets,
+# and custom-layer skin_sound coverage. Catches fields the tracked list does not name.
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\compare_skin_definitions.ps1
+
+# Category-map comparison (finds a skin moved between categories, or a missing category)
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\compare_skin_categories.ps1
+
 # Run all local validation checks and show official reverse references
 powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\validate_skin_update.ps1 -SkinId hat_ice_pengulls
+
+# Patch a copied .zip so its internal build name matches the custom_ runtime build
+# (use `python`, not `python3`, on Windows)
+python .\tools\patch_build_name.py _tmp\extracted.zip anim\dynamic\custom_name.zip custom_name
 
 # Search all relevant files for one skin before editing
 rg -n 'hat_ice_pengulls|custom_hat_ice_pengulls' .\scripts\prefabskins.lua .\scripts\prefabs\skinprefabs.lua .\scripts\prefabs\kleiskinprefabs.lua
@@ -718,6 +737,7 @@ Use this before declaring an update finished:
 9. `modinfo.lua` uses the intended `V<major>.<minor>.<patch>` version and was bumped after the final scope was established.
 10. `git diff --check` passes, the staged path list contains only intended public files, and no ignored local note is staged.
 11. `tools\validate_skin_update.ps1` ends with `VALIDATION_OK`.
+12. `tools\compare_skin_definitions.ps1` ends with `DEFINITIONS_OK` (name coverage, tracked field values, complete field-name sets, custom-layer `skin_sound` coverage) and `tools\compare_skin_categories.ps1` ends with `CATEGORIES_OK`.
 
 ## Final Guidance
 
@@ -1040,4 +1060,37 @@ Verification after update:
 - git diff --check: passed
 - unified validator: VALIDATION_OK
 
-Known pre-existing gap confirmed during this check (not introduced by this update, and deliberately not fixed here): the mirror blocks `wx78_scanner_catcoon` and `wx78_scanner_catcoon_item` omit the official `skin_sound` field. Official `skinprefabs.lua` contains 25 `skin_sound` occurrences, the mirror 23 -- and the mirror already had 23 at HEAD, so the omission predates this update. Because `skin_sound` is not part of the field list the comparison uses, "0 field mismatches" above means "0 mismatches among the tracked fields", not byte-level equality with official. See the corresponding note in "Current Repository Caveats".
+Known pre-existing gap confirmed during this check, and then repaired in the follow-up entry below: the mirror blocks `wx78_scanner_catcoon` and `wx78_scanner_catcoon_item` omitted the official `skin_sound` field. Official `skinprefabs.lua` contains 25 `skin_sound` occurrences, the mirror 23 -- and the mirror already had 23 at HEAD, so the omission predates this update. Because `skin_sound` was not part of the field list the comparison used, "0 field mismatches" above means "0 mismatches among the tracked fields", not byte-level equality with official.
+
+### 2026-10-04 (follow-up): Repaired the `skin_sound` gap and promoted the comparison tools
+
+Found while reviewing the `wagdrone_rolling_fire` update. A comparison of the complete top-level field-name sets -- not just the fields the tools were told to diff -- showed that `skin_sound` was the single field the mirror was missing anywhere: official `scripts/prefabskins.lua` declared it on 25 definitions, while the mirror and the custom layer each declared it on 23.
+
+Affected definitions:
+
+- `wx78_scanner_catcoon`
+- `wx78_scanner_catcoon_item`
+
+Both carried `skin_sound = { ["genericuse"] = { ["deactivate"] = "WX_rework/scanner/deactivate_catcoon", ["locked_on"] = "WX_rework/scanner/locked_on_catcoon", }, }` in official. The omission was pre-existing (`git show HEAD:` also had 23) and did not break loading; the effect was limited to the scanner falling back to its default deactivate and locked-on sounds.
+
+What was done:
+
+1. `scripts/prefabs/skinprefabs.lua`: added the official `skin_sound` table verbatim to both blocks, at the official field position (after `skin_tags`, before `release_group`).
+2. `scripts/prefabs/kleiskinprefabs.lua`: added the same `skin_sound` table to `custom_wx78_scanner_catcoon` and `custom_wx78_scanner_catcoon_item`. The mirror entry alone changes nothing at runtime, because the custom layer is the active definition layer. The custom layer keeps its alphabetical field order, so the field sits between `release_group` and `skin_tags`. Sound event paths are not build names and are copied unchanged -- no `custom_` prefixing.
+3. `tools\validate_skin_update.ps1`: added `skin_sound` to `$semanticFields`.
+4. Added `tools\compare_skin_definitions.ps1`: compares every official definition against the mirror for name coverage, tracked field values, complete top-level field-name sets, and custom-layer `skin_sound` coverage.
+5. Added `tools\compare_skin_categories.ps1`: compares the category -> members mapping, which name coverage alone cannot see.
+6. Added `tools\patch_build_name.py`: the `build.bin` patching procedure from this guide, as a runnable script.
+7. `modinfo.lua` was updated from `V6.4.0` to `V6.4.1` (patch bump: a focused fix, not a new content batch).
+
+Verification after the repair:
+
+- name coverage: 1737 / 1737, no mirror-only names
+- tracked field values: 15 / 15 fields match across all 1737 definitions
+- complete field-name sets: identical for all 1737 definitions, no official-only or mirror-only field
+- `skin_sound` coverage: official 25, mirror 25, custom 25, no definition lacking a `custom_` counterpart
+- category map: 369 / 369, 0 differences
+- negative test: dropping one `skin_sound` line from each layer of a throwaway copy made all three guards fail and exit 1, confirming the checks are not vacuous
+- `tools\compare_skin_definitions.ps1`: `DEFINITIONS_OK`
+- `tools\compare_skin_categories.ps1`: `CATEGORIES_OK`
+- unified validator: `VALIDATION_OK`
